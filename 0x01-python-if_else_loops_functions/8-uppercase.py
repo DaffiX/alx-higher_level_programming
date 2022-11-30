@@ -1,9 +1,7 @@
-
-            print("{:d}{:d}".format(num, num2), end=", ")
-            princse(str):
-    for i in str:
-        i = ord(i)
-        if 97 <= i <= 122:
-            i = i - 32
-        print("{:c}".format(i), end='')
-    print()("{:d}{:d}".format(num, num2), end=", ")
+#!/usr/bin/python3
+def uppercase(str):
+    for word in str:
+        if (ord(word) > 96 and ord(word) <= 124):
+            word = chr(ord(word) - 32)
+        print("{}".format(word), end='')
+    print()
