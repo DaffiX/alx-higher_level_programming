@@ -1,0 +1,30 @@
+# Test correct output
+assert matrix_divided([[1, 2, 3], [4, 5, 6]], 3) == [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# Test correct output with decimal result
+assert matrix_divided([[1, 2, 3], [4, 5, 6]], 2) == [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+# Test TypeError for matrix containing non-integer/float element
+try:
+    matrix_divided([[1, 2, 'a'], [4, 5, 6]], 2)
+except TypeError as e:
+    assert str(e) == "matrix must be a matrix (list of lists) of integers/floats"
+
+# Test TypeError for rows of different sizes
+try:
+    matrix_divided([[1, 2], [4, 5, 6]], 2)
+except TypeError as e:
+    assert str(e) == "Each row of the matrix must have the same size"
+
+# Test TypeError for non-integer/float div argument
+try:
+    matrix_divided([[1, 2, 3], [4, 5, 6]], 'a')
+except TypeError as e:
+    assert str(e) == "div must be a number"
+
+# Test ZeroDivisionError for div argument equal to 0
+try:
+    matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+except ZeroDivisionError as e:
+    assert str(e) == "division by zero"
+
