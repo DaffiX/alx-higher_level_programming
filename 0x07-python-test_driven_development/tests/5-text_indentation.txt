@@ -1,0 +1,18 @@
+# Test correct indentation
+text_indentation("Hello, how are you? I'm fine. What about you?: I'm doing well. Thanks for asking.")
+
+# Test TypeError for non-string text argument
+try:
+    text_indentation(123)
+except TypeError as e:
+    assert str(e) == "text must be a string"
+
+# Test correct indentation with multiple instances of same character
+text_indentation("Hello? How are you?: I'm fine. How about you? I'm doing well. Thanks for asking.")
+
+# Test correct indentation with no instances of target characters
+text_indentation("Hello, how are you doing? I'm doing well. Thanks for asking.")
+
+# Test correct indentation with leading/trailing spaces
+text_indentation("   Hello, how are you?  I'm fine. What about you?:   I'm doing well. Thanks for asking.   ")
+
