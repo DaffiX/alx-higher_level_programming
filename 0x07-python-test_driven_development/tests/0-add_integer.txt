@@ -1,0 +1,18 @@
+def test_add_integer():
+    assert add_integer(4, 5) == 9
+    assert add_integer(4.0, 5.0) == 9
+    assert add_integer(4.5, 5.5) == 10
+    assert add_integer(4) == 102
+    assert add_integer(-4, 5) == 1
+    assert add_integer("4", "5") == 9
+    try:
+        add_integer("a", "5")
+        assert False, "TypeError not raised"
+    except TypeError as te:
+        assert str(te) == "a must be an integer or a float"
+    try:
+        add_integer(4, "a")
+        assert False, "TypeError not raised"
+    except TypeError as te:
+        assert str(te) == "b must be an integer or a float"
+
