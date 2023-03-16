@@ -1,5 +1,5 @@
 # Javascript - Objects, Scopes and Closures
-![Modern JS](https://pixabay.com/images/id-736399/)
+![Modern JS](https://pixabay.com/vectors/node-js-logo-nodejs-javascript-736399/)
 <sub>Image Credits: [Ahmad Awais ⚡️](https://pixabay.com)</sub>
 
 - Understanding more on Javascript Classes and Closures(Bundling of functions).
