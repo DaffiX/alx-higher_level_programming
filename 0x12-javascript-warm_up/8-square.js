@@ -6,4 +6,4 @@ if (isNaN(sqr)) {
   for (let x = 0; x < sqr; x++) {
     console.log('X'.repeat(sqr));
   }
-}}
+}
