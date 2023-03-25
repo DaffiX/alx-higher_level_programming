@@ -13,6 +13,6 @@ if __name__ == '__main__':
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC;")
 
     # fetch all data - grab row
-    rows = cursor.fetch()
+    rows = cursor.fetchall()
     for row in rows:
         print(row)
