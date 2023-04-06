@@ -6,15 +6,17 @@ import requests
 
 
 if __name__ == "__main__":
-    url = "https://api.github.com/repos/{}/{}/commits".format(
-        sys.argv[2], sys.argv[1])
+    url = "https://api.github.com/repos/{}/{}/commits".format(sys.argv[2], sys.argv[1])
 
-    m = requests.get(url)
-    commits = m.json()
     try:
-        for i in range(10):
+        m = requests.get(url)
+        m.raise_for_status()
+        commits = m.json()
+        for commit in commits[:10]:
             print("{}: {}".format(
-                commits[i].get("sha"),
-                commits[i].get("commit").get("author").get("name")))
-    except IndexError:
-        pass
+                commit.get("sha"),
+                commit.get("commit").get("author").get("name")))
+    except requests.exceptions.RequestException as e:
+        print("Error: {}".format(e))
+    except (KeyError, IndexError):
+        print("Error: Invalid response from API")
